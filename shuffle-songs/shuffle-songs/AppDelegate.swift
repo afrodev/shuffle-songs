@@ -21,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func initFirstView() {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = SongsVC()
-        window.rootViewController = vc
+        
+        let initVC = SongsVC()
+        let nvc = UINavigationController(rootViewController: initVC)
+        window.rootViewController = nvc
+        
         self.window = window
         self.window?.makeKeyAndVisible()
     }
