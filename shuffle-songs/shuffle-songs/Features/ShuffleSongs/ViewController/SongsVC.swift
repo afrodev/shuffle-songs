@@ -31,6 +31,7 @@ class SongsVC: UIViewController {
     
     @objc func shuffle() {
         print("teste")
+        self.mainView.state(state: .loading)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,5 +47,4 @@ class SongsVC: UIViewController {
         super.viewWillAppear(animated)
         mainView.setupViewConfiguration()
     }
-
 }
