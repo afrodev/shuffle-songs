@@ -18,6 +18,7 @@
 		9E5636AE2295A14B00C78D34 /* SongsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5636AD2295A14B00C78D34 /* SongsVC.swift */; };
 		9E9C380F2295C9CF0006C0C2 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C380E2295C9CF0006C0C2 /* ViewConfiguration.swift */; };
 		9E9C38112295CB4A0006C0C2 /* SongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38102295CB4A0006C0C2 /* SongsView.swift */; };
+		9E9C38152295DC560006C0C2 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38142295DC560006C0C2 /* LoadingState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		9E5636AD2295A14B00C78D34 /* SongsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsVC.swift; sourceTree = "<group>"; };
 		9E9C380E2295C9CF0006C0C2 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		9E9C38102295CB4A0006C0C2 /* SongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsView.swift; sourceTree = "<group>"; };
+		9E9C38142295DC560006C0C2 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		9ECC7DB2455063631EC0171B /* Pods-shuffle-songsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songsUITests.release.xcconfig"; path = "Target Support Files/Pods-shuffle-songsUITests/Pods-shuffle-songsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9EFAFA42DB03B0A69B13A2B7 /* Pods-shuffle-songs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songs.debug.xcconfig"; path = "Target Support Files/Pods-shuffle-songs/Pods-shuffle-songs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 		9E5636B02295A16900C78D34 /* ShuffleSongs */ = {
 			isa = PBXGroup;
 			children = (
+				9E9C38162295DC5E0006C0C2 /* Enum */,
 				9E5636B12295A17C00C78D34 /* View */,
 				9E5636B22295A18100C78D34 /* ViewController */,
 				9E5636B32295A18700C78D34 /* ViewModel */,
@@ -230,6 +233,14 @@
 				9E9C380E2295C9CF0006C0C2 /* ViewConfiguration.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9E9C38162295DC5E0006C0C2 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				9E9C38142295DC560006C0C2 /* LoadingState.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,6 +520,7 @@
 			files = (
 				9E9C380F2295C9CF0006C0C2 /* ViewConfiguration.swift in Sources */,
 				9E56368022959F1600C78D34 /* AppDelegate.swift in Sources */,
+				9E9C38152295DC560006C0C2 /* LoadingState.swift in Sources */,
 				9E5636AE2295A14B00C78D34 /* SongsVC.swift in Sources */,
 				9E9C38112295CB4A0006C0C2 /* SongsView.swift in Sources */,
 			);
