@@ -10,13 +10,34 @@ import UIKit
 
 class SongsVC: UIViewController {
     private let mainView: SongsView
-    
+    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+
     init() {
         self.mainView = SongsView(frame: .zero)
         super.init(nibName: nil, bundle: nil)
         
         self.title = "Shuffle Songs"
         configNavigationBar()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(mainView)
+        self.view.addSubview(activityIndicator)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configIndicator()
+        mainView.setupViewConfiguration()
+    }
+    
+    @objc func shuffle() {
+        self.activityIndicator.startAnimating()
     }
     
     func configNavigationBar() {
@@ -29,22 +50,8 @@ class SongsVC: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style:.plain, target: self, action: #selector(shuffle))
     }
     
-    @objc func shuffle() {
-        print("teste")
-        self.mainView.state(state: .loading)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.addSubview(mainView)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        mainView.setupViewConfiguration()
+    func configIndicator() {
+        activityIndicator.frame.size = CGSize(width: self.view.frame.width/4, height: self.view.frame.width/4)
+        activityIndicator.center = self.view.center
     }
 }

@@ -11,7 +11,6 @@ import UIKit
 import SnapKit
 
 class SongsView: UITableView {
-    private let activityIndicator = UIActivityIndicatorView(frame: .zero)
     
     required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }
     convenience init() { self.init(frame: .zero) }
@@ -24,31 +23,11 @@ class SongsView: UITableView {
     private func setBackgroundColor() {
         self.backgroundColor = UIColor(displayP3Red: 48/255.0, green: 34/255.0, blue: 48/255.0, alpha: 1.0)
     }
-    
-    func state(state: LoadingState) {
-        switch state {
-        case .loading:
-            loadingState()
-        case .finish:
-            finishState()
-        }
-    }
-    
-    private func loadingState() {
-        self.tableHeaderView = activityIndicator
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
-    }
-    
-    private func finishState() {
-        activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
-    }
 }
 
 extension SongsView: ViewConfiguration {
     func buildViewHierarchy() {
-        self.addSubview(activityIndicator)
+        
     }
     
     func setupConstraints() {
@@ -56,12 +35,5 @@ extension SongsView: ViewConfiguration {
         self.snp.makeConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
         }
-        
-        self.activityIndicator.snp.makeConstraints { (make) in
-            make.left.equalTo(30)
-            make.right.equalTo(30)
-            make.size.height.equalTo(self.activityIndicator.snp.width)
-        }
-        
     }
 }

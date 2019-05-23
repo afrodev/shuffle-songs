@@ -19,6 +19,7 @@
 		9E9C380F2295C9CF0006C0C2 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C380E2295C9CF0006C0C2 /* ViewConfiguration.swift */; };
 		9E9C38112295CB4A0006C0C2 /* SongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38102295CB4A0006C0C2 /* SongsView.swift */; };
 		9E9C38152295DC560006C0C2 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38142295DC560006C0C2 /* LoadingState.swift */; };
+		9E9C381C2296C4420006C0C2 /* ShuffleSongsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C381B2296C4420006C0C2 /* ShuffleSongsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		9E9C380E2295C9CF0006C0C2 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		9E9C38102295CB4A0006C0C2 /* SongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsView.swift; sourceTree = "<group>"; };
 		9E9C38142295DC560006C0C2 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		9E9C381B2296C4420006C0C2 /* ShuffleSongsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShuffleSongsRepository.swift; path = "shuffle-songs/Features/ShuffleSongs/View/ShuffleSongsRepository.swift"; sourceTree = SOURCE_ROOT; };
 		9ECC7DB2455063631EC0171B /* Pods-shuffle-songsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songsUITests.release.xcconfig"; path = "Target Support Files/Pods-shuffle-songsUITests/Pods-shuffle-songsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9EFAFA42DB03B0A69B13A2B7 /* Pods-shuffle-songs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songs.debug.xcconfig"; path = "Target Support Files/Pods-shuffle-songs/Pods-shuffle-songs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 		9E5636B42295A18C00C78D34 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				9E9C381B2296C4420006C0C2 /* ShuffleSongsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9C381C2296C4420006C0C2 /* ShuffleSongsRepository.swift in Sources */,
 				9E9C380F2295C9CF0006C0C2 /* ViewConfiguration.swift in Sources */,
 				9E56368022959F1600C78D34 /* AppDelegate.swift in Sources */,
 				9E9C38152295DC560006C0C2 /* LoadingState.swift in Sources */,
