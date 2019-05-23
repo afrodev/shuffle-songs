@@ -7,3 +7,43 @@
 //
 
 import Foundation
+
+enum RepositoryError: Error {
+    case invalidURL
+    case noData
+    case mapping
+}
+
+protocol SongsRepository {
+    func getSongs(onSuccess: @escaping (_ songs: [Song]) -> Void,
+                  onError: @escaping (_ error: RepositoryError?) -> Void)
+}
+
+class ShuffleSongsRepository: SongsRepository {
+    private let strURL = "https://us-central1-tw-exercicio-mobile.cloudfunctions.net/lookup?id=909253,1171421960,358714030,1419227,264111789&limit=5"
+
+    func getSongs(onSuccess: @escaping ([Song]) -> Void, onError: @escaping (RepositoryError?) -> Void) {
+        guard let url = URL(string: strURL) else {
+            onError(.invalidURL)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, reponse, error) in
+            guard let songData = data else {
+                onError(.noData); return
+            }
+            
+            do {
+                let data = try JSONDecoder().decode(SongWrapper.self, from: songData)
+                onSuccess(data.results)
+            } catch {
+                onError(.mapping)
+            }
+        }.resume()
+    }
+}
+
+
+
+
+

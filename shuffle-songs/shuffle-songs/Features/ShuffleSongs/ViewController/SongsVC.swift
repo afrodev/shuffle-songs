@@ -11,7 +11,8 @@ import UIKit
 class SongsVC: UIViewController {
     private let mainView: SongsView
     private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-
+    private let viewModel = SongsViewModel()
+    
     init() {
         self.mainView = SongsView(frame: .zero)
         super.init(nibName: nil, bundle: nil)
@@ -34,6 +35,7 @@ class SongsVC: UIViewController {
         super.viewWillAppear(animated)
         configIndicator()
         mainView.setupViewConfiguration()
+        viewModel.getSongs()
     }
     
     @objc func shuffle() {
