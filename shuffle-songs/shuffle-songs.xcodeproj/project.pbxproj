@@ -10,6 +10,7 @@
 		386F15401E4EF88B9F0C7785 /* Pods_shuffle_songsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A03F15B6AEF1DA12CDF1FDC /* Pods_shuffle_songsUITests.framework */; };
 		59B7A812A8BF492E9666A71B /* Pods_shuffle_songsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BD46AEDED038CF17789F52 /* Pods_shuffle_songsTests.framework */; };
 		7D2C72F38638C19D6ADB49C0 /* Pods_shuffle_songs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A778D2014BCF865758942A /* Pods_shuffle_songs.framework */; };
+		9E4FB7C122981BD4006CCD2C /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4FB7C022981BD4006CCD2C /* SongCell.swift */; };
 		9E56368022959F1600C78D34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56367F22959F1600C78D34 /* AppDelegate.swift */; };
 		9E56368722959F1700C78D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E56368622959F1700C78D34 /* Assets.xcassets */; };
 		9E56368A22959F1700C78D34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E56368822959F1700C78D34 /* LaunchScreen.storyboard */; };
@@ -50,6 +51,7 @@
 		35EBFEBEB768FEDDA3734C5A /* Pods-shuffle-songs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songs.release.xcconfig"; path = "Target Support Files/Pods-shuffle-songs/Pods-shuffle-songs.release.xcconfig"; sourceTree = "<group>"; };
 		3A03F15B6AEF1DA12CDF1FDC /* Pods_shuffle_songsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shuffle_songsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48875E300529753CFD2D858E /* Pods-shuffle-songsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songsUITests.debug.xcconfig"; path = "Target Support Files/Pods-shuffle-songsUITests/Pods-shuffle-songsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E4FB7C022981BD4006CCD2C /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		9E56367C22959F1600C78D34 /* shuffle-songs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shuffle-songs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E56367F22959F1600C78D34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E56368622959F1700C78D34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				9E9C38102295CB4A0006C0C2 /* SongsView.swift */,
+				9E4FB7C022981BD4006CCD2C /* SongCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				9E9C38232296DB210006C0C2 /* Song.swift in Sources */,
 				9E9C38152295DC560006C0C2 /* LoadingState.swift in Sources */,
 				9E5636AE2295A14B00C78D34 /* SongsVC.swift in Sources */,
+				9E4FB7C122981BD4006CCD2C /* SongCell.swift in Sources */,
 				9E9C38112295CB4A0006C0C2 /* SongsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

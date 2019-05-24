@@ -27,8 +27,8 @@ class SongsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(mainView)
-        self.view.addSubview(activityIndicator)
+        addSubviews()
+        configTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +40,16 @@ class SongsVC: UIViewController {
     
     @objc func shuffle() {
         self.activityIndicator.startAnimating()
+    }
+    
+    func addSubviews() {
+        self.view.addSubview(mainView)
+        self.view.addSubview(activityIndicator)
+    }
+    
+    func configTableView() {
+        self.mainView.delegate = viewModel
+        self.mainView.dataSource = viewModel
     }
     
     func configNavigationBar() {

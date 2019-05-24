@@ -18,6 +18,9 @@ class SongsView: UITableView {
     init(frame: CGRect = .zero) {
         super.init(frame: frame, style: .plain)
         setBackgroundColor()
+        
+        self.separatorStyle = .none
+        self.register(SongCell.self, forCellReuseIdentifier: SongCell.identifier)
     }
     
     private func setBackgroundColor() {
