@@ -20,11 +20,17 @@ class SongsViewModel: NSObject {
     
     func getSongs() {
         repository.getSongs(onSuccess: { (songs) in
-            self.songs = songs
+            self.songs = self.onlySongs(songs: songs)
             self.reloadTableView?()
         }, onError: { error in
             print(error)
         })
+    }
+    
+    func onlySongs(songs: [Song]) -> [Song] {
+        return songs.filter { (song) -> Bool in
+            song.wrapperType == "track"
+        }
     }
     
     func getSongInfo(indexPath: IndexPath) -> (trackName: String, artistGenre: String, artworkURL: String) {
