@@ -20,6 +20,9 @@ class SongsView: UITableView {
         setBackgroundColor()
         
         self.separatorStyle = .none
+        self.rowHeight = UITableView.automaticDimension
+        self.estimatedRowHeight = 100
+        
         self.register(SongCell.self, forCellReuseIdentifier: SongCell.identifier)
     }
     

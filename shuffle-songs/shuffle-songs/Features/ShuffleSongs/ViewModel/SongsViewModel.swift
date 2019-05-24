@@ -37,7 +37,11 @@ extension SongsViewModel: UITableViewDelegate, UITableViewDataSource {
     }
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SongCell.identifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SongCell.identifier, for: indexPath) as? SongCell else {
+            return UITableViewCell()
+        }
+        
+        cell.setupViewConfiguration()
         
         return cell
     }
