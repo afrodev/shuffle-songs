@@ -36,6 +36,8 @@ class SongsVC: UIViewController {
         configIndicator()
         mainView.setupViewConfiguration()
         viewModel.getSongs()
+        
+        self.activityIndicator.startAnimating()
     }
     
     @objc func shuffle() {
@@ -52,6 +54,7 @@ class SongsVC: UIViewController {
         self.mainView.dataSource = viewModel
         self.viewModel.reloadTableView = { [weak self] in
             DispatchQueue.main.async {
+                self?.activityIndicator.stopAnimating()
                 self?.mainView.reloadData()
             }
         }

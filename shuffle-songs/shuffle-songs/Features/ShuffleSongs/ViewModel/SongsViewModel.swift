@@ -13,17 +13,20 @@ class SongsViewModel: NSObject {
     private let repository: SongsRepository
     private var songs: [Song] = []
     var reloadTableView: (() -> Void)?
-    
+
     init(repository: SongsRepository = ShuffleSongsRepository()) {
         self.repository = repository
     }
     
     func getSongs() {
-        repository.getSongs(onSuccess: { (songs) in
-            self.songs = self.onlySongs(songs: songs)
-            self.reloadTableView?()
-        }, onError: { error in
-            print(error)
+        repository.getSongs(onSuccess: { [weak self] (songs)  in
+            guard let strongSelf = self else { return }
+            strongSelf.songs = strongSelf.onlySongs(songs: songs)
+            strongSelf.reloadTableView?()
+        }, onError: { [weak self]  error in
+            guard let strongSelf = self else { return }
+            strongSelf.songs = []
+            strongSelf.reloadTableView?()
         })
     }
     
@@ -81,6 +84,7 @@ extension SongsViewModel: UITableViewDelegate, UITableViewDataSource {
         getImage(strURL: info.artworkURL) { (image) in
             cell.setupImage(image: image)
         }
+        
         cell.setupViewConfiguration()
         
         return cell
