@@ -17,6 +17,8 @@ enum RepositoryError: Error {
 protocol SongsRepository {
     func getSongs(onSuccess: @escaping (_ songs: [Song]) -> Void,
                   onError: @escaping (_ error: RepositoryError?) -> Void)
+    func getImage(url: URL, completion: @escaping (_ data: Data?) -> Void)
+
 }
 
 class ShuffleSongsRepository: SongsRepository {
@@ -40,7 +42,14 @@ class ShuffleSongsRepository: SongsRepository {
                 onError(.mapping)
             }
         }.resume()
+    }
+    
+    func getImage(url: URL, completion: @escaping (_ data: Data?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            completion(data)
+        }
         
+        task.resume()
     }
 }
 

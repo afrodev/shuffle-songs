@@ -10,31 +10,47 @@ import UIKit
 
 class SongCell: UITableViewCell {
     static let identifier = "SongCell"
-    lazy var imageViewArtwork: UIImageView = {
+    private lazy var imageViewArtwork: UIImageView = {
         let view = UIImageView(frame: .zero)
-        view.backgroundColor = .red
         return view
     }()
     
-    lazy var labelSongName: UILabel = {
+    private lazy var labelSongName: UILabel = {
         let view = UILabel(frame: .zero)
-        view.backgroundColor = .black
+        view.font = UIFont.systemFont(ofSize: 14)
+        view.textColor = Colors.textColorHighlight
+        view.baselineAdjustment =  UIBaselineAdjustment.none
         return view
     }()
     
-    lazy var labelArtistGenre: UILabel = {
+    private lazy var labelArtistGenre: UILabel = {
         let view = UILabel(frame: .zero)
-        view.backgroundColor = .green
+        view.textColor = Colors.textColor
+        view.font = UIFont.systemFont(ofSize: 14)
+
         return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
+        self.backgroundColor = Colors.background
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupText(trackName: String, artistGenre: String) {
+        labelSongName.text = trackName
+        labelArtistGenre.text = artistGenre
+        imageViewArtwork.image = UIImage()
+    }
+    
+    func setupImage(image: UIImage) {
+        DispatchQueue.main.async {
+            self.imageViewArtwork.image = image
+        }
     }
 }
 

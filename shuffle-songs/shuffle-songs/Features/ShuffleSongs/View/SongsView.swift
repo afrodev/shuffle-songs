@@ -27,7 +27,7 @@ class SongsView: UITableView {
     }
     
     private func setBackgroundColor() {
-        self.backgroundColor = UIColor(displayP3Red: 48/255.0, green: 34/255.0, blue: 48/255.0, alpha: 1.0)
+        self.backgroundColor = Colors.background
     }
 }
 

@@ -12,6 +12,7 @@ import UIKit
 class SongsViewModel: NSObject {
     private let repository: SongsRepository
     private var songs: [Song] = []
+    var reloadTableView: (() -> Void)?
     
     init(repository: SongsRepository = ShuffleSongsRepository()) {
         self.repository = repository
@@ -20,10 +21,37 @@ class SongsViewModel: NSObject {
     func getSongs() {
         repository.getSongs(onSuccess: { (songs) in
             self.songs = songs
-            print(songs)
+            self.reloadTableView?()
         }, onError: { error in
             print(error)
         })
+    }
+    
+    func getSongInfo(indexPath: IndexPath) -> (trackName: String, artistGenre: String, artworkURL: String) {
+        let song = songs[indexPath.row]
+        let trackName = song.trackName ?? ""
+        let artistGenre = song.artistName + " (" + song.primaryGenreName + ") "
+        let url = song.artworkUrl ?? ""
+        
+        return (trackName, artistGenre, url)
+    }
+    
+    func getImage(strURL: String, completion: @escaping (_ image: UIImage) -> Void) {
+        guard let url = URL(string: strURL) else { return }
+        
+        self.repository.getImage(url: url) { (data) in
+            guard let imageData = data else {
+                completion(UIImage())
+                return
+            }
+            
+            guard let image = UIImage(data: imageData) else {
+                completion(UIImage())
+                return
+            }
+            
+            completion(image)
+        }
     }
 }
 
@@ -33,7 +61,7 @@ extension SongsViewModel: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.songs.count
     }
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,6 +69,12 @@ extension SongsViewModel: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        let info = getSongInfo(indexPath: indexPath)
+        cell.setupText(trackName: info.trackName, artistGenre: info.artistGenre)
+        
+        getImage(strURL: info.artworkURL) { (image) in
+            cell.setupImage(image: image)
+        }
         cell.setupViewConfiguration()
         
         return cell
