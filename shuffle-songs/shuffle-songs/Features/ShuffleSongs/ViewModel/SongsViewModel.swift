@@ -21,19 +21,84 @@ class SongsViewModel: NSObject {
     func getSongs() {
         repository.getSongs(onSuccess: { [weak self] (songs)  in
             guard let strongSelf = self else { return }
-            strongSelf.songs = strongSelf.onlySongs(songs: songs)
+            strongSelf.songs = songs
             strongSelf.reloadTableView?()
-        }, onError: { [weak self]  error in
+        }, onError: { [weak self] error in
             guard let strongSelf = self else { return }
             strongSelf.songs = []
             strongSelf.reloadTableView?()
         })
     }
     
-    func onlySongs(songs: [Song]) -> [Song] {
-        return songs.filter { (song) -> Bool in
-            song.wrapperType == "track"
+    func shuffleSongs(completion: @escaping () -> Void) {
+        DispatchQueue.global().async {
+            self.songs = self.shuffle(songs: self.songs)
+            DispatchQueue.main.async {
+                completion()
+            }
         }
+    }
+    
+    private func shuffle(songs: [Song]) -> [Song] {
+        var dict: [Int: [Song]] = [:]
+        let allSongsNumber = songs.count
+        var shuffledSongs: [Song] = []
+        
+        // Put on dictionary | O(n)
+        for s in songs {
+            let key = s.artistId
+            let list = dict[key]
+            
+            // If don't have any value on dictionary just add it
+            if var updatedList = list {
+                updatedList.append(s)
+                dict.updateValue(updatedList, forKey: key)
+            } else {
+                dict.updateValue([s], forKey: key)
+            }
+        }
+        
+        // Get randomically from dictionary the key and the value
+        // removing each one
+        var i = 0
+        var currentArtistId: Int = -1
+        
+        while i < allSongsNumber {
+            // Get the artist randomically
+            if let randomArtist = dict.randomElement() {
+                // Verify if the artist is the same that before,
+                // if it is get another
+                if randomArtist.key != currentArtistId {
+                    currentArtistId = randomArtist.key
+
+                    // Get song randomically
+                    if let randomSong = randomArtist.value.randomElement() {
+                        var newSongList = randomArtist.value
+                        shuffledSongs.append(randomSong)
+                        
+                        // Remove from list and update dict
+                        newSongList.removeAll{ $0.id == randomSong.id }
+                        
+                        // If don't exist songs, the artist it's is no needed
+                        if newSongList.count == 0 {
+                            dict.removeValue(forKey: randomArtist.key)
+                        } else {
+                            dict.updateValue(newSongList, forKey: randomArtist.key)
+                        }
+                        
+                        // increase one
+                        i += 1
+                    }
+                }
+            }
+            
+            
+            
+        }
+        
+        
+        return shuffledSongs
+        
     }
     
     func getSongInfo(indexPath: IndexPath) -> (trackName: String, artistGenre: String, artworkURL: String) {

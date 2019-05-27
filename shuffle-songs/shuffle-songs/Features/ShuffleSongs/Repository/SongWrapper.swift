@@ -9,5 +9,5 @@
 import Foundation
 
 struct SongWrapper: Decodable {
-    let results: [Song]
+    let results: [Result]
 }

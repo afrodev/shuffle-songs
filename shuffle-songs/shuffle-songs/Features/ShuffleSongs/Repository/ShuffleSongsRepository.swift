@@ -37,7 +37,8 @@ class ShuffleSongsRepository: SongsRepository {
             
             do {
                 let data = try JSONDecoder().decode(SongWrapper.self, from: songData)
-                onSuccess(data.results)
+                let songs = SongDataMapper().map(results: data.results)
+                onSuccess(songs)
             } catch {
                 onError(.mapping)
             }

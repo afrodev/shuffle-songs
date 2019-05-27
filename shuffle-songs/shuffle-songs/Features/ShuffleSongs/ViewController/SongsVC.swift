@@ -42,6 +42,12 @@ class SongsVC: UIViewController {
     
     @objc func shuffle() {
         self.activityIndicator.startAnimating()
+        
+        viewModel.shuffleSongs { [weak self] in
+            self?.mainView.reloadData()
+            self?.activityIndicator.stopAnimating()
+            
+        }
     }
     
     func addSubviews() {

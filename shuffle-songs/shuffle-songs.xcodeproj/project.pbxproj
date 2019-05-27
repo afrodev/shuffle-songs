@@ -12,6 +12,8 @@
 		7D2C72F38638C19D6ADB49C0 /* Pods_shuffle_songs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A778D2014BCF865758942A /* Pods_shuffle_songs.framework */; };
 		9E4FB7C122981BD4006CCD2C /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4FB7C022981BD4006CCD2C /* SongCell.swift */; };
 		9E4FB7C322983A0C006CCD2C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4FB7C222983A0C006CCD2C /* Colors.swift */; };
+		9E4FB7C5229861FF006CCD2C /* SongDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4FB7C4229861FF006CCD2C /* SongDataMapper.swift */; };
+		9E4FB7C72298625E006CCD2C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4FB7C62298625E006CCD2C /* Song.swift */; };
 		9E56368022959F1600C78D34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56367F22959F1600C78D34 /* AppDelegate.swift */; };
 		9E56368722959F1700C78D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E56368622959F1700C78D34 /* Assets.xcassets */; };
 		9E56368A22959F1700C78D34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E56368822959F1700C78D34 /* LaunchScreen.storyboard */; };
@@ -23,7 +25,7 @@
 		9E9C38152295DC560006C0C2 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38142295DC560006C0C2 /* LoadingState.swift */; };
 		9E9C381C2296C4420006C0C2 /* ShuffleSongsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C381B2296C4420006C0C2 /* ShuffleSongsRepository.swift */; };
 		9E9C38202296D2C20006C0C2 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C381F2296D2C20006C0C2 /* SongsViewModel.swift */; };
-		9E9C38232296DB210006C0C2 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38222296DB210006C0C2 /* Song.swift */; };
+		9E9C38232296DB210006C0C2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38222296DB210006C0C2 /* Result.swift */; };
 		9E9C38252296DB410006C0C2 /* SongWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38242296DB410006C0C2 /* SongWrapper.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		48875E300529753CFD2D858E /* Pods-shuffle-songsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songsUITests.debug.xcconfig"; path = "Target Support Files/Pods-shuffle-songsUITests/Pods-shuffle-songsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E4FB7C022981BD4006CCD2C /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		9E4FB7C222983A0C006CCD2C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9E4FB7C4229861FF006CCD2C /* SongDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDataMapper.swift; sourceTree = "<group>"; };
+		9E4FB7C62298625E006CCD2C /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9E56367C22959F1600C78D34 /* shuffle-songs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shuffle-songs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E56367F22959F1600C78D34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E56368622959F1700C78D34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 		9E9C38142295DC560006C0C2 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		9E9C381B2296C4420006C0C2 /* ShuffleSongsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShuffleSongsRepository.swift; path = "shuffle-songs/Features/ShuffleSongs/Repository/ShuffleSongsRepository.swift"; sourceTree = SOURCE_ROOT; };
 		9E9C381F2296D2C20006C0C2 /* SongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SongsViewModel.swift; path = "shuffle-songs/Features/ShuffleSongs/ViewModel/SongsViewModel.swift"; sourceTree = SOURCE_ROOT; };
-		9E9C38222296DB210006C0C2 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		9E9C38222296DB210006C0C2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9E9C38242296DB410006C0C2 /* SongWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SongWrapper.swift; path = "shuffle-songs/Features/ShuffleSongs/Repository/SongWrapper.swift"; sourceTree = SOURCE_ROOT; };
 		9ECC7DB2455063631EC0171B /* Pods-shuffle-songsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songsUITests.release.xcconfig"; path = "Target Support Files/Pods-shuffle-songsUITests/Pods-shuffle-songsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9EFAFA42DB03B0A69B13A2B7 /* Pods-shuffle-songs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songs.debug.xcconfig"; path = "Target Support Files/Pods-shuffle-songs/Pods-shuffle-songs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 			children = (
 				9E9C381B2296C4420006C0C2 /* ShuffleSongsRepository.swift */,
 				9E9C38242296DB410006C0C2 /* SongWrapper.swift */,
+				9E4FB7C4229861FF006CCD2C /* SongDataMapper.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -264,7 +269,8 @@
 		9E9C38212296DB0D0006C0C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9E9C38222296DB210006C0C2 /* Song.swift */,
+				9E9C38222296DB210006C0C2 /* Result.swift */,
+				9E4FB7C62298625E006CCD2C /* Song.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -549,11 +555,13 @@
 				9E9C381C2296C4420006C0C2 /* ShuffleSongsRepository.swift in Sources */,
 				9E9C380F2295C9CF0006C0C2 /* ViewConfiguration.swift in Sources */,
 				9E9C38202296D2C20006C0C2 /* SongsViewModel.swift in Sources */,
+				9E4FB7C5229861FF006CCD2C /* SongDataMapper.swift in Sources */,
 				9E56368022959F1600C78D34 /* AppDelegate.swift in Sources */,
-				9E9C38232296DB210006C0C2 /* Song.swift in Sources */,
+				9E9C38232296DB210006C0C2 /* Result.swift in Sources */,
 				9E9C38152295DC560006C0C2 /* LoadingState.swift in Sources */,
 				9E5636AE2295A14B00C78D34 /* SongsVC.swift in Sources */,
 				9E4FB7C122981BD4006CCD2C /* SongCell.swift in Sources */,
+				9E4FB7C72298625E006CCD2C /* Song.swift in Sources */,
 				9E9C38112295CB4A0006C0C2 /* SongsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
