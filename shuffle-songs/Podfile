@@ -11,15 +11,15 @@ target 'shuffle-songs' do
   target 'shuffle-songsTests' do
     inherit! :search_paths
     # Pods for testing
-	pod 'Quick'
-        pod 'Nimble'
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'shuffle-songsUITests' do
     inherit! :search_paths
     # Pods for testing
-	pod 'Quick'
-        pod 'Nimble'
+      pod 'Quick'
+      pod 'Nimble'
   end   
        
 end

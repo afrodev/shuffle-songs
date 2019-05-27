@@ -17,7 +17,6 @@
 		9E56368022959F1600C78D34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56367F22959F1600C78D34 /* AppDelegate.swift */; };
 		9E56368722959F1700C78D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E56368622959F1700C78D34 /* Assets.xcassets */; };
 		9E56368A22959F1700C78D34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E56368822959F1700C78D34 /* LaunchScreen.storyboard */; };
-		9E56369522959F1700C78D34 /* shuffle_songsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56369422959F1700C78D34 /* shuffle_songsTests.swift */; };
 		9E5636A022959F1700C78D34 /* shuffle_songsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56369F22959F1700C78D34 /* shuffle_songsUITests.swift */; };
 		9E5636AE2295A14B00C78D34 /* SongsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5636AD2295A14B00C78D34 /* SongsVC.swift */; };
 		9E9C380F2295C9CF0006C0C2 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C380E2295C9CF0006C0C2 /* ViewConfiguration.swift */; };
@@ -27,6 +26,7 @@
 		9E9C38202296D2C20006C0C2 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C381F2296D2C20006C0C2 /* SongsViewModel.swift */; };
 		9E9C38232296DB210006C0C2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38222296DB210006C0C2 /* Result.swift */; };
 		9E9C38252296DB410006C0C2 /* SongWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38242296DB410006C0C2 /* SongWrapper.swift */; };
+		9EEE3F32229B65F300843731 /* SongDataMapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE3F31229B65F300843731 /* SongDataMapperSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,6 @@
 		9E56368922959F1700C78D34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E56368B22959F1700C78D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E56369022959F1700C78D34 /* shuffle-songsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "shuffle-songsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E56369422959F1700C78D34 /* shuffle_songsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shuffle_songsTests.swift; sourceTree = "<group>"; };
 		9E56369622959F1700C78D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E56369B22959F1700C78D34 /* shuffle-songsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "shuffle-songsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E56369F22959F1700C78D34 /* shuffle_songsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shuffle_songsUITests.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		9E9C38222296DB210006C0C2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9E9C38242296DB410006C0C2 /* SongWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SongWrapper.swift; path = "shuffle-songs/Features/ShuffleSongs/Repository/SongWrapper.swift"; sourceTree = SOURCE_ROOT; };
 		9ECC7DB2455063631EC0171B /* Pods-shuffle-songsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songsUITests.release.xcconfig"; path = "Target Support Files/Pods-shuffle-songsUITests/Pods-shuffle-songsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9EEE3F31229B65F300843731 /* SongDataMapperSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDataMapperSpec.swift; sourceTree = "<group>"; };
 		9EFAFA42DB03B0A69B13A2B7 /* Pods-shuffle-songs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songs.debug.xcconfig"; path = "Target Support Files/Pods-shuffle-songs/Pods-shuffle-songs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,8 +186,8 @@
 		9E56369322959F1700C78D34 /* shuffle-songsTests */ = {
 			isa = PBXGroup;
 			children = (
-				9E56369422959F1700C78D34 /* shuffle_songsTests.swift */,
 				9E56369622959F1700C78D34 /* Info.plist */,
+				9EEE3F31229B65F300843731 /* SongDataMapperSpec.swift */,
 			);
 			path = "shuffle-songsTests";
 			sourceTree = "<group>";
@@ -570,7 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E56369522959F1700C78D34 /* shuffle_songsTests.swift in Sources */,
+				9EEE3F32229B65F300843731 /* SongDataMapperSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
