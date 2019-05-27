@@ -11,32 +11,29 @@ import UIKit
 
 class SongsViewModel: NSObject {
     private let repository: SongsRepository
-    private var songs: [Song] = []
-    var reloadTableView: (() -> Void)?
-
+    var songs: [Song] = []
+    
     init(repository: SongsRepository = ShuffleSongsRepository()) {
         self.repository = repository
     }
     
-    func getSongs() {
+    func getSongs(completion: @escaping () -> Void) {
         repository.getSongs(onSuccess: { [weak self] (songs)  in
             guard let strongSelf = self else { return }
             strongSelf.songs = songs
-            strongSelf.reloadTableView?()
-        }, onError: { [weak self] error in
-            guard let strongSelf = self else { return }
-            strongSelf.songs = []
-            strongSelf.reloadTableView?()
+            completion()
+            
+            }, onError: { [weak self] error in
+                guard let strongSelf = self else { return }
+                strongSelf.songs = []
+                print(error)
+                completion()
         })
     }
     
     func shuffleSongs(completion: @escaping () -> Void) {
-        DispatchQueue.global().async {
-            self.songs = self.shuffle(songs: self.songs)
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
+        self.songs = self.shuffle(songs: self.songs)
+        completion()
     }
     
     private func shuffle(songs: [Song]) -> [Song] {
@@ -61,16 +58,17 @@ class SongsViewModel: NSObject {
         // Get randomically from dictionary the key and the value
         // removing each one
         var i = 0
-        var currentArtistId: Int = -1
+        var previousArtistId: Int = -1
         
+        // O(n)
         while i < allSongsNumber {
             // Get the artist randomically
             if let randomArtist = dict.randomElement() {
                 // Verify if the artist is the same that before,
                 // if it is get another
-                if randomArtist.key != currentArtistId {
-                    currentArtistId = randomArtist.key
-
+                if randomArtist.key != previousArtistId {
+                    previousArtistId = randomArtist.key
+                    
                     // Get song randomically
                     if let randomSong = randomArtist.value.randomElement() {
                         var newSongList = randomArtist.value
@@ -79,7 +77,7 @@ class SongsViewModel: NSObject {
                         // Remove from list and update dict
                         newSongList.removeAll{ $0.id == randomSong.id }
                         
-                        // If don't exist songs, the artist it's is no needed
+                        // If don't exist songs, the artist no needed anymore
                         if newSongList.count == 0 {
                             dict.removeValue(forKey: randomArtist.key)
                         } else {
@@ -137,7 +135,7 @@ extension SongsViewModel: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.songs.count
     }
- 
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SongCell.identifier, for: indexPath) as? SongCell else {
             return UITableViewCell()

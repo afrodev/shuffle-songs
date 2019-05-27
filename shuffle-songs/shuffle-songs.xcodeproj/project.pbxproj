@@ -27,6 +27,10 @@
 		9E9C38232296DB210006C0C2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38222296DB210006C0C2 /* Result.swift */; };
 		9E9C38252296DB410006C0C2 /* SongWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C38242296DB410006C0C2 /* SongWrapper.swift */; };
 		9EEE3F32229B65F300843731 /* SongDataMapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE3F31229B65F300843731 /* SongDataMapperSpec.swift */; };
+		9EEE3F34229B6AF100843731 /* SongViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE3F33229B6AF100843731 /* SongViewModelSpec.swift */; };
+		9EEE3F37229B6FEF00843731 /* EmptySongsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE3F36229B6FEF00843731 /* EmptySongsRepositoryMock.swift */; };
+		9EEE3F39229B705800843731 /* FilledSongsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE3F38229B705800843731 /* FilledSongsRepositoryMock.swift */; };
+		9EEE3F3B229B707600843731 /* ErrorSongsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE3F3A229B707600843731 /* ErrorSongsRepositoryMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,10 @@
 		9E9C38242296DB410006C0C2 /* SongWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SongWrapper.swift; path = "shuffle-songs/Features/ShuffleSongs/Repository/SongWrapper.swift"; sourceTree = SOURCE_ROOT; };
 		9ECC7DB2455063631EC0171B /* Pods-shuffle-songsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songsUITests.release.xcconfig"; path = "Target Support Files/Pods-shuffle-songsUITests/Pods-shuffle-songsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9EEE3F31229B65F300843731 /* SongDataMapperSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDataMapperSpec.swift; sourceTree = "<group>"; };
+		9EEE3F33229B6AF100843731 /* SongViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModelSpec.swift; sourceTree = "<group>"; };
+		9EEE3F36229B6FEF00843731 /* EmptySongsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySongsRepositoryMock.swift; sourceTree = "<group>"; };
+		9EEE3F38229B705800843731 /* FilledSongsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledSongsRepositoryMock.swift; sourceTree = "<group>"; };
+		9EEE3F3A229B707600843731 /* ErrorSongsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSongsRepositoryMock.swift; sourceTree = "<group>"; };
 		9EFAFA42DB03B0A69B13A2B7 /* Pods-shuffle-songs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffle-songs.debug.xcconfig"; path = "Target Support Files/Pods-shuffle-songs/Pods-shuffle-songs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,8 +194,10 @@
 		9E56369322959F1700C78D34 /* shuffle-songsTests */ = {
 			isa = PBXGroup;
 			children = (
+				9EEE3F35229B6FCB00843731 /* Mock */,
 				9E56369622959F1700C78D34 /* Info.plist */,
 				9EEE3F31229B65F300843731 /* SongDataMapperSpec.swift */,
+				9EEE3F33229B6AF100843731 /* SongViewModelSpec.swift */,
 			);
 			path = "shuffle-songsTests";
 			sourceTree = "<group>";
@@ -273,6 +283,16 @@
 				9E4FB7C62298625E006CCD2C /* Song.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9EEE3F35229B6FCB00843731 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9EEE3F36229B6FEF00843731 /* EmptySongsRepositoryMock.swift */,
+				9EEE3F38229B705800843731 /* FilledSongsRepositoryMock.swift */,
+				9EEE3F3A229B707600843731 /* ErrorSongsRepositoryMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,7 +590,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EEE3F34229B6AF100843731 /* SongViewModelSpec.swift in Sources */,
 				9EEE3F32229B65F300843731 /* SongDataMapperSpec.swift in Sources */,
+				9EEE3F3B229B707600843731 /* ErrorSongsRepositoryMock.swift in Sources */,
+				9EEE3F39229B705800843731 /* FilledSongsRepositoryMock.swift in Sources */,
+				9EEE3F37229B6FEF00843731 /* EmptySongsRepositoryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
